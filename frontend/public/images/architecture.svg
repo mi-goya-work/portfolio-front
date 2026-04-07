@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">システム構成図</title>
+  <desc id="desc">CMS 管理画面、CMS サーバー、配信基盤、フロントエンド、AI チャット、更新反映の6要素で構成されたアーキテクチャ図。</desc>
+  <style>
+    text {
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .title {
+      fill: #0f172a;
+      font-size: 34px;
+      font-weight: 800;
+    }
+    .subtitle {
+      fill: #475569;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .group {
+      fill: #64748b;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .cluster {
+      fill: rgba(255, 247, 237, 0.7);
+      stroke: #fdba74;
+      stroke-width: 1.5;
+      stroke-dasharray: 8 8;
+      rx: 28;
+    }
+    .cluster-blue {
+      fill: rgba(239, 246, 255, 0.78);
+      stroke: #93c5fd;
+      stroke-width: 1.5;
+      stroke-dasharray: 8 8;
+      rx: 28;
+    }
+    .cluster-title {
+      fill: #c2410c;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .cluster-title-blue {
+      fill: #1d4ed8;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .card {
+      stroke-width: 1.5;
+      rx: 24;
+    }
+    .card-orange {
+      fill: #fff7ed;
+      stroke: #fdba74;
+    }
+    .card-blue {
+      fill: #eff6ff;
+      stroke: #93c5fd;
+    }
+    .card-slate {
+      fill: #f8fafc;
+      stroke: #cbd5e1;
+    }
+    .card-title {
+      fill: #0f172a;
+      font-size: 24px;
+      font-weight: 800;
+    }
+    .card-copy {
+      fill: #475569;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .tag {
+      rx: 999;
+    }
+    .tag-orange {
+      fill: #fed7aa;
+    }
+    .tag-blue {
+      fill: #bfdbfe;
+    }
+    .tag-slate {
+      fill: #e2e8f0;
+    }
+    .tag-text-orange {
+      fill: #9a3412;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .tag-text-blue {
+      fill: #1d4ed8;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .tag-text-slate {
+      fill: #334155;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .arrow-orange {
+      stroke: #fb923c;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .arrow-blue {
+      stroke: #3b82f6;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .arrow-slate {
+      stroke: #94a3b8;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 10 10;
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="100" y1="40" x2="1100" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7ed"/>
+      <stop offset="0.5" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eff6ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="24" y="24" width="1152" height="712" rx="36" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="712" rx="36" stroke="#e2e8f0"/>
+
+  <text x="72" y="86" class="title">システム構成</text>
+  <text x="72" y="116" class="subtitle">EC2 上の Headless CMS から Next.js フロントと AI チャットへ配信し、Vercel で公開する構成</text>
+
+  <text x="120" y="162" class="group">CMS / API</text>
+  <text x="120" y="408" class="group">FRONTEND / DELIVERY</text>
+
+  <rect x="56" y="168" width="720" height="208" class="cluster"/>
+  <text x="80" y="194" class="cluster-title">HEADLESS CMS ON EC2</text>
+  <rect x="56" y="414" width="720" height="208" class="cluster-blue"/>
+  <text x="80" y="440" class="cluster-title-blue">PUBLIC EXPERIENCE</text>
+
+  <rect x="72" y="184" width="320" height="176" class="card card-orange"/>
+  <text x="108" y="236" class="card-title">CMS 管理UI</text>
+  <text x="108" y="274" class="card-copy">Laravel / Blade</text>
+  <text x="108" y="300" class="card-copy">Tailwind CSS</text>
+  <rect x="108" y="322" width="82" height="32" class="tag tag-orange"/>
+  <text x="149" y="343" text-anchor="middle" class="tag-text-orange">Laravel</text>
+  <rect x="198" y="322" width="72" height="32" class="tag tag-orange"/>
+  <text x="234" y="343" text-anchor="middle" class="tag-text-orange">Blade</text>
+  <rect x="278" y="322" width="88" height="32" class="tag tag-orange"/>
+  <text x="322" y="343" text-anchor="middle" class="tag-text-orange">Tailwind</text>
+
+  <rect x="440" y="184" width="320" height="176" class="card card-orange"/>
+  <text x="476" y="236" class="card-title">CMS 配信基盤</text>
+  <text x="476" y="274" class="card-copy">EC2 / Amazon Linux 2023</text>
+  <text x="476" y="300" class="card-copy">Nginx / MySQL 8</text>
+  <rect x="476" y="322" width="58" height="32" class="tag tag-orange"/>
+  <text x="505" y="343" text-anchor="middle" class="tag-text-orange">EC2</text>
+  <rect x="542" y="322" width="74" height="32" class="tag tag-orange"/>
+  <text x="579" y="343" text-anchor="middle" class="tag-text-orange">Nginx</text>
+  <rect x="624" y="322" width="90" height="32" class="tag tag-orange"/>
+  <text x="669" y="343" text-anchor="middle" class="tag-text-orange">MySQL 8</text>
+
+  <rect x="808" y="184" width="320" height="176" class="card card-slate"/>
+  <text x="844" y="236" class="card-title">配信基盤</text>
+  <text x="844" y="274" class="card-copy">Vercel Hosting / CDN</text>
+  <text x="844" y="300" class="card-copy">フロント全体を配信</text>
+  <rect x="844" y="322" width="76" height="32" class="tag tag-slate"/>
+  <text x="882" y="343" text-anchor="middle" class="tag-text-slate">Vercel</text>
+  <rect x="928" y="322" width="58" height="32" class="tag tag-slate"/>
+  <text x="957" y="343" text-anchor="middle" class="tag-text-slate">CDN</text>
+  <rect x="994" y="322" width="86" height="32" class="tag tag-slate"/>
+  <text x="1037" y="343" text-anchor="middle" class="tag-text-slate">Preview</text>
+
+  <rect x="72" y="430" width="320" height="176" class="card card-blue"/>
+  <text x="108" y="482" class="card-title">フロントエンド</text>
+  <text x="108" y="520" class="card-copy">Next.js 16 / React 19</text>
+  <text x="108" y="546" class="card-copy">TypeScript / Tailwind CSS</text>
+  <rect x="108" y="568" width="98" height="32" class="tag tag-blue"/>
+  <text x="157" y="589" text-anchor="middle" class="tag-text-blue">Next.js 16</text>
+  <rect x="214" y="568" width="74" height="32" class="tag tag-blue"/>
+  <text x="251" y="589" text-anchor="middle" class="tag-text-blue">React</text>
+  <rect x="296" y="568" width="84" height="32" class="tag tag-blue"/>
+  <text x="338" y="589" text-anchor="middle" class="tag-text-blue">TS</text>
+
+  <rect x="440" y="430" width="320" height="176" class="card card-blue"/>
+  <text x="476" y="482" class="card-title">AI チャット</text>
+  <text x="476" y="520" class="card-copy">React Client Components</text>
+  <text x="476" y="546" class="card-copy">Fetch / SSE Streaming</text>
+  <rect x="476" y="568" width="70" height="32" class="tag tag-blue"/>
+  <text x="511" y="589" text-anchor="middle" class="tag-text-blue">Fetch</text>
+  <rect x="554" y="568" width="58" height="32" class="tag tag-blue"/>
+  <text x="583" y="589" text-anchor="middle" class="tag-text-blue">SSE</text>
+  <rect x="620" y="568" width="126" height="32" class="tag tag-blue"/>
+  <text x="683" y="589" text-anchor="middle" class="tag-text-blue">Client UI</text>
+
+  <rect x="808" y="430" width="320" height="176" class="card card-slate"/>
+  <text x="844" y="482" class="card-title">更新反映</text>
+  <text x="844" y="520" class="card-copy">Next.js Cache Tags</text>
+  <text x="844" y="546" class="card-copy">Revalidate API Route</text>
+  <rect x="844" y="568" width="96" height="32" class="tag tag-slate"/>
+  <text x="892" y="589" text-anchor="middle" class="tag-text-slate">Revalidate</text>
+  <rect x="948" y="568" width="82" height="32" class="tag tag-slate"/>
+  <text x="989" y="589" text-anchor="middle" class="tag-text-slate">Cache</text>
+  <rect x="1038" y="568" width="74" height="32" class="tag tag-slate"/>
+  <text x="1075" y="589" text-anchor="middle" class="tag-text-slate">Route</text>
+
+  <line x1="392" y1="272" x2="424" y2="272" class="arrow-orange"/>
+  <polygon points="424,272 410,264 410,280" fill="#fb923c"/>
+
+  <line x1="760" y1="272" x2="792" y2="272" class="arrow-slate"/>
+  <polygon points="792,272 778,264 778,280" fill="#94a3b8"/>
+
+  <line x1="232" y1="360" x2="232" y2="412" class="arrow-blue"/>
+  <polygon points="232,412 224,398 240,398" fill="#3b82f6"/>
+
+  <line x1="600" y1="360" x2="600" y2="412" class="arrow-blue"/>
+  <polygon points="600,412 592,398 608,398" fill="#3b82f6"/>
+
+  <line x1="968" y1="360" x2="968" y2="412" class="arrow-slate"/>
+  <polygon points="968,412 960,398 976,398" fill="#94a3b8"/>
+
+  <path d="M968 360 C968 390 968 398 968 414" class="arrow-slate"/>
+  <polygon points="968,414 960,400 976,400" fill="#94a3b8"/>
+
+  <path d="M808 518 C790 518 786 518 776 518" class="arrow-slate"/>
+  <polygon points="776,518 790,510 790,526" fill="#94a3b8"/>
+</svg>

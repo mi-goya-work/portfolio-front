@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-surface: #FAFAFA;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-muted: #F1F5F9;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --font-heading: var(--font-archivo), var(--font-noto), var(--font-sans);
+  --font-body: var(--font-space-grotesk), var(--font-noto), var(--font-sans);
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background-color: var(--color-surface);
+  color: #1E293B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+/* Typing cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor {
+  animation: blink 0.7s step-end infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 50ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 100ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 150ms; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 200ms; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 250ms; }
+.reveal-stagger > *:nth-child(7) { transition-delay: 300ms; }
+.reveal-stagger > *:nth-child(8) { transition-delay: 350ms; }
+.reveal-stagger > *:nth-child(9) { transition-delay: 400ms; }
+.reveal-stagger > *:nth-child(10) { transition-delay: 450ms; }
+.reveal-stagger > *:nth-child(11) { transition-delay: 500ms; }
+.reveal-stagger > *:nth-child(12) { transition-delay: 550ms; }
+
+/* Work card hover */
+.work-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Tech item hover */
+.tech-item {
+  transition: transform 0.2s ease;
+}
+.tech-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .work-card, .tech-item { transition: none; }
+  .work-card:hover, .tech-item:hover { transform: none; }
+}

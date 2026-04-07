@@ -1,0 +1,12 @@
+*.log
+.DS_Store
+.env
+.credentials
+.mcp.json
+.vercel/
+node_modules/
+vendor/
+/.idea
+/.vscode
+/.zed
+Thumbs.db
